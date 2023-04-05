@@ -145,7 +145,7 @@ export default ProductDetails;
 
 export async function getStaticPaths() {
     const product = await fetchData("/api/products?populate=*");
-    const paths = product?.data.map((item) => ({
+    const paths = product?.data?.map((item) => ({
         params: {
             slug: item.attributes.slug
         }
